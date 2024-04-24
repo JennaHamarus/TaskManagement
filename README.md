@@ -7,6 +7,7 @@ Työssä olen käyttänyt:
 Backend:         * Visual Studio
                  * Swagger
                  * ASP.NET
+                 * C#
 
 Frontend:         * Visual Studio Code
                   * React
