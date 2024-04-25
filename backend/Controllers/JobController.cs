@@ -31,7 +31,7 @@ namespace backend.Controllers
             await _context.Jobs.AddAsync(newJob);
             await _context.SaveChangesAsync();
 
-            return Ok("Job created succesfully");
+            return Ok("Task created succesfully");
         }
 
         // Read

@@ -32,10 +32,8 @@ namespace backend.Core.Context
                 .HasConversion<string>();
 
             modelBuilder.Entity<Job>()
-                .Property(job => job.Level)
+                .Property(job => job.Status)
                 .HasConversion<string>();
-
-            //Add-Migration failed lukee package manager consolessa. en tiedä miksi??
         }
     }
 }

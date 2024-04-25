@@ -14,7 +14,7 @@ namespace backend.Core.AutoMapperConfig
             CreateMap<ActivityCreateDto, Activity>();
             CreateMap<Activity, ActivityGetDto>();
 
-            //Job
+            //Task/Job
             CreateMap<JobCreateDto, Job>();
             CreateMap<Job, JobGetDto>()
                 .ForMember(dest => dest.ActivityName, opt => opt.MapFrom(src => src.Activity.Name));

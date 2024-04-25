@@ -7,7 +7,7 @@ namespace backend.Core.Dtos.Job
     {
         public long ID { get; set; }
         public string Title { get; set; }
-        public JobLevel Level { get; set; }
+        public JobStatus Status { get; set; }
         public long ActivityId { get; set; }
         public string ActivityName { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.Now;
