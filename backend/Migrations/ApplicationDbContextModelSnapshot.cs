@@ -22,58 +22,8 @@ namespace backend.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("backend.Core.Entities.Candidate", b =>
-                {
-                    b.Property<long>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("ID"));
-
-                    b.Property<string>("CoverLetter")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FirstName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
-
-                    b.Property<long>("JobId")
-                        .HasColumnType("bigint");
-
-                    b.Property<string>("LastName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Phone")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ResumeUrl")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("UpdatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("ID");
-
-                    b.HasIndex("JobId");
-
-                    b.ToTable("Candidates");
-                });
-
-            modelBuilder.Entity("backend.Core.Entities.Company", b =>
+            modelBuilder.Entity("backend.Core.Entities.Activity", b =>
                 {
                     b.Property<long>("ID")
                         .ValueGeneratedOnAdd()
@@ -91,7 +41,7 @@ namespace backend.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Size")
+                    b.Property<string>("Status")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -100,7 +50,7 @@ namespace backend.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("Companies");
+                    b.ToTable("Activities");
                 });
 
             modelBuilder.Entity("backend.Core.Entities.Job", b =>
@@ -111,7 +61,7 @@ namespace backend.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("ID"));
 
-                    b.Property<long>("CompanyId")
+                    b.Property<long>("ActivityId")
                         .HasColumnType("bigint");
 
                     b.Property<DateTime>("CreatedAt")
@@ -120,7 +70,7 @@ namespace backend.Migrations
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
-                    b.Property<string>("Level")
+                    b.Property<string>("Status")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -128,46 +78,40 @@ namespace backend.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("EndDate")
                         .HasColumnType("datetime2");
 
                     b.HasKey("ID");
 
-                    b.HasIndex("CompanyId");
+                    b.HasIndex("ActivityId");
 
                     b.ToTable("Jobs");
                 });
 
-            modelBuilder.Entity("backend.Core.Entities.Candidate", b =>
-                {
-                    b.HasOne("backend.Core.Entities.Job", "Job")
-                        .WithMany("Candidates")
-                        .HasForeignKey("JobId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Job");
-                });
-
             modelBuilder.Entity("backend.Core.Entities.Job", b =>
                 {
-                    b.HasOne("backend.Core.Entities.Company", "Company")
+                    b.HasOne("backend.Core.Entities.Activity", "Activity")
                         .WithMany("Jobs")
-                        .HasForeignKey("CompanyId")
+                        .HasForeignKey("ActivityId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Company");
+                    b.Navigation("Activity");
                 });
 
-            modelBuilder.Entity("backend.Core.Entities.Company", b =>
+            modelBuilder.Entity("backend.Core.Entities.Activity", b =>
                 {
                     b.Navigation("Jobs");
-                });
-
-            modelBuilder.Entity("backend.Core.Entities.Job", b =>
-                {
-                    b.Navigation("Candidates");
                 });
 #pragma warning restore 612, 618
         }

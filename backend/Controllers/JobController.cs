@@ -46,8 +46,6 @@ namespace backend.Controllers
 
         }
 
-        // Read (Get Job By ID)
-
         //Update
 
         //Delete

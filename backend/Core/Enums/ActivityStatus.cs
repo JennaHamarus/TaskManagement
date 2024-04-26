@@ -4,6 +4,6 @@
     {
         Waiting,
         InProgress,
-        Ready
+        Completed
     }
 }
