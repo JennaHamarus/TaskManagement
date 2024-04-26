@@ -11,7 +11,7 @@ namespace backend.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AlterColumn<string>(
-                name: "Level",
+                name: "Status",
                 table: "Jobs",
                 type: "nvarchar(max)",
                 nullable: false,
@@ -19,8 +19,8 @@ namespace backend.Migrations
                 oldType: "int");
 
             migrationBuilder.AlterColumn<string>(
-                name: "Size",
-                table: "Companies",
+                name: "Status",
+                table: "Activities",
                 type: "nvarchar(max)",
                 nullable: false,
                 oldClrType: typeof(int),
@@ -31,7 +31,7 @@ namespace backend.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AlterColumn<int>(
-                name: "Level",
+                name: "Status",
                 table: "Jobs",
                 type: "int",
                 nullable: false,
@@ -39,8 +39,8 @@ namespace backend.Migrations
                 oldType: "nvarchar(max)");
 
             migrationBuilder.AlterColumn<int>(
-                name: "Size",
-                table: "Companies",
+                name: "Status",
+                table: "Activities",
                 type: "int",
                 nullable: false,
                 oldClrType: typeof(string),
