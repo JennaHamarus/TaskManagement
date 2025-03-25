@@ -1,4 +1,4 @@
-Task Management Backend
+Task Management Backend, frontend is in the other repository.
 
 I started this school project with youtube tutorial. First I created a complete application following a tutorial and then modified it to meet the requirements of the assignment.
 
