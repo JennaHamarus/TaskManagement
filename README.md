@@ -1,8 +1,8 @@
-Task Management
+Task Management Backend
 
-Aloitin työn youtube-tutoriaalin avulla. Tein alkuun kokonaisen sovelluksen tutoriaalin avulla ja sen jälkeen muokkasin siitä tehtävän mukaisen.
+I started this school project with youtube tutorial. First I created a complete application following a tutorial and then modified it to meet the requirements of the assignment.
 
-Työssä olen käyttänyt:
+In this project I've used:
 
 Backend:         * Visual Studio
                  * Swagger
@@ -15,8 +15,8 @@ Frontend:         * Visual Studio Code
                   * React Router
                   * Scss
 
-Tietokanta:       * SQL Server Management Studio
+Database:       * SQL Server Management Studio
 
-Versionhallinta:  * GitHub
+Version controll:  * GitHub
 
-Tyylittelyt on luotu manuaalisesti käyttämällä scss:ää.
+The styling was created manually using SCSS.
